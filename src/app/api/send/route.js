@@ -1,15 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-require('dotenv').config(); // Load environment variables from .env file
-
-const Resend = require('resend'); // or import Resend from 'resend';
-
-const apiKey = process.env.RESEND_API_KEY;
-if (!apiKey) {
-  throw new Error('Missing API key. Set the RESEND_API_KEY environment variable.');
-}
-
+const apiKey = "re_SyXzdhcd_K8Fr3asm7jKRGXW3Ffqjfs69git";
 const resend = new Resend(apiKey);
 
 const fromEmail = "fredericksamangazw@gmail.com";
