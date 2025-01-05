@@ -1,7 +1,14 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+
+const Resend = require('resend'); // or import Resend from 'resend';
+
+const apiKey = process.env.RESEND_API_KEY;
+if (!apiKey) {
+  throw new Error('Missing API key. Set the RESEND_API_KEY environment variable.');
+}
+
 const fromEmail = "fredericksamangazw@gmail.com";
 
 export async function POST(req, res) {
